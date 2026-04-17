@@ -1,0 +1,172 @@
+<!-- NAVIGATION -->
+<nav class="navbar flex justify-between items-center px-6 md:px-12 py-4 bg-white shadow-md fixed w-full top-0 z-50">
+  <a href="#" class="logo text-2xl font-extrabold text-primary uppercase tracking-wide">Clark <span class="text-secondary">&</span> Wolcott</a>
+  
+  <div class="mobile-menu-btn block md:hidden text-2xl text-primary cursor-pointer" (click)="toggleMobileMenu()" (keydown.enter)="toggleMobileMenu()" tabindex="0">
+      <i class="fas" [ngClass]="isMobileMenuOpen() ? 'fa-times' : 'fa-bars'"></i>
+  </div>
+  
+  <ul class="nav-links flex-col md:flex-row absolute md:relative top-[72px] md:top-0 left-0 w-full md:w-auto bg-white md:bg-transparent shadow-md md:shadow-none text-center py-6 md:py-0 gap-6 md:gap-8 items-center transition-all duration-300"
+      [ngClass]="isMobileMenuOpen() ? 'flex' : 'hidden md:flex'">
+      <li><a href="#home" class="font-semibold uppercase text-sm text-primary hover:text-secondary transition-colors" (click)="closeMobileMenu()">Home</a></li>
+      <li><a href="#about" class="font-semibold uppercase text-sm text-primary hover:text-secondary transition-colors" (click)="closeMobileMenu()">About</a></li>
+      <li><a href="#services" class="font-semibold uppercase text-sm text-primary hover:text-secondary transition-colors" (click)="closeMobileMenu()">Services</a></li>
+      <li><a href="#gallery" class="font-semibold uppercase text-sm text-primary hover:text-secondary transition-colors" (click)="closeMobileMenu()">Gallery</a></li>
+      <li><a href="#contact" class="font-semibold uppercase text-sm text-primary hover:text-secondary transition-colors" (click)="closeMobileMenu()">Contact</a></li>
+      <li>
+        <a [href]="'tel:' + content().phone.replace('-', '')" class="px-6 py-3 bg-secondary text-white font-bold rounded hover:bg-accent transition-all hover:-translate-y-0.5 hover:shadow-lg inline-block">
+          <i class="fas fa-phone-alt mr-2"></i> {{ content().phone }}
+        </a>
+      </li>
+  </ul>
+</nav>
+
+<!-- HERO SECTION -->
+<header id="home" class="hero h-screen flex flex-col justify-center items-center text-center text-white px-5 bg-cover bg-center" style="background-image: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1541888087525-ceea62dc789e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+  <h1 class="text-4xl md:text-6xl mb-4 uppercase tracking-widest max-w-4xl">{{ content().heroTitle }}</h1>
+  <p class="text-lg md:text-xl mb-10 max-w-2xl text-slate-300">{{ content().heroSubtitle }}</p>
+  <div class="flex flex-col sm:flex-row gap-4">
+      <a href="#contact" class="px-7 py-3 bg-secondary text-white font-bold rounded hover:bg-accent transition-all hover:-translate-y-0.5 hover:shadow-lg">Get a Free Quote</a>
+      <a href="#services" class="px-7 py-3 bg-transparent border-2 border-white text-white font-bold rounded hover:bg-white hover:text-primary transition-all hover:-translate-y-0.5">Explore Services</a>
+  </div>
+</header>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="py-24 px-6 md:px-12">
+  <h2 class="section-title">About Us</h2>
+  <div class="flex flex-col md:flex-row gap-12 items-center max-w-6xl mx-auto">
+      <div class="flex-1">
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Construction Work" class="w-full rounded-lg shadow-2xl" referrerpolicy="no-referrer">
+      </div>
+      <div class="flex-1 text-lg text-text-light">
+          <p class="mb-6">{{ content().aboutText }}</p>
+          <p class="mb-6">Our team is comprised of experienced professionals who have worked on a variety of projects, from residential homes to historic landmarks. No matter the size or scope of the project, we are committed to delivering the highest quality work and customer service.</p>
+          <a href="#gallery" class="px-7 py-3 bg-secondary text-white font-bold rounded hover:bg-accent transition-all hover:-translate-y-0.5 hover:shadow-lg inline-block mt-4">View Our Work</a>
+      </div>
+  </div>
+</section>
+
+<!-- SERVICES SECTION -->
+<section id="services" class="py-24 px-6 md:px-12 bg-bg-light">
+  <h2 class="section-title">Our Services</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="bg-white p-10 text-center rounded-lg shadow-sm transition-all duration-300 border-b-4 border-transparent hover:-translate-y-2 hover:border-secondary hover:shadow-xl">
+          <i class="fas fa-home text-5xl text-secondary mb-6"></i>
+          <h3 class="text-xl text-primary mb-4 font-bold">Residential Masonry</h3>
+          <p class="text-text-light">Custom brickwork, patios, retaining walls, and stonework designed to enhance the beauty of your home.</p>
+      </div>
+      <div class="bg-white p-10 text-center rounded-lg shadow-sm transition-all duration-300 border-b-4 border-transparent hover:-translate-y-2 hover:border-secondary hover:shadow-xl">
+          <i class="fas fa-building text-5xl text-secondary mb-6"></i>
+          <h3 class="text-xl text-primary mb-4 font-bold">Commercial Masonry</h3>
+          <p class="text-text-light">Reliable and structural masonry solutions for commercial businesses, focusing on safety and durability.</p>
+      </div>
+      <div class="bg-white p-10 text-center rounded-lg shadow-sm transition-all duration-300 border-b-4 border-transparent hover:-translate-y-2 hover:border-secondary hover:shadow-xl">
+          <i class="fas fa-hammer text-5xl text-secondary mb-6"></i>
+          <h3 class="text-xl text-primary mb-4 font-bold">Home Remodeling</h3>
+          <p class="text-text-light">Expert remodeling services to upgrade your living spaces, bringing modern functionality to classic structures.</p>
+      </div>
+      <div class="bg-white p-10 text-center rounded-lg shadow-sm transition-all duration-300 border-b-4 border-transparent hover:-translate-y-2 hover:border-secondary hover:shadow-xl">
+          <i class="fas fa-landmark text-5xl text-secondary mb-6"></i>
+          <h3 class="text-xl text-primary mb-4 font-bold">Historic Restoration</h3>
+          <p class="text-text-light">Preserving the integrity and historical charm of older buildings with specialized restoration techniques.</p>
+      </div>
+      <div class="bg-white p-10 text-center rounded-lg shadow-sm transition-all duration-300 border-b-4 border-transparent hover:-translate-y-2 hover:border-secondary hover:shadow-xl">
+          <i class="fas fa-fire text-5xl text-secondary mb-6"></i>
+          <h3 class="text-xl text-primary mb-4 font-bold">Chimney Services</h3>
+          <p class="text-text-light">Complete chimney repair, rebuilding, and maintenance to keep your home safe and warm.</p>
+      </div>
+  </div>
+</section>
+
+<!-- GALLERY SECTION -->
+<section id="gallery" class="py-24 px-6 md:px-12">
+  <h2 class="section-title">Project Gallery</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <div class="relative overflow-hidden rounded-lg h-72 group">
+          <img src="https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Masonry Work 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" referrerpolicy="no-referrer">
+      </div>
+      <div class="relative overflow-hidden rounded-lg h-72 group">
+          <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Masonry Work 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" referrerpolicy="no-referrer">
+      </div>
+      <div class="relative overflow-hidden rounded-lg h-72 group">
+          <img src="https://images.unsplash.com/photo-1621619447472-76136d8d64e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Masonry Work 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" referrerpolicy="no-referrer">
+      </div>
+      <div class="relative overflow-hidden rounded-lg h-72 group">
+          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Masonry Work 4" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" referrerpolicy="no-referrer">
+      </div>
+      <div class="relative overflow-hidden rounded-lg h-72 group">
+          <img src="https://images.unsplash.com/photo-1505577058444-a3afe90eeaa8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Masonry Work 5" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" referrerpolicy="no-referrer">
+      </div>
+      <div class="relative overflow-hidden rounded-lg h-72 group">
+          <img src="https://images.unsplash.com/photo-1585144860106-998ca08293a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Masonry Work 6" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" referrerpolicy="no-referrer">
+      </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS SECTION -->
+<section id="testimonials" class="py-24 px-6 md:px-12">
+  <h2 class="section-title">What Our Clients Say</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      @for (testimonial of content().testimonials; track testimonial.name) {
+      <div class="bg-white p-8 rounded-lg shadow-md border border-slate-100 flex flex-col justify-between">
+          <div>
+              <div class="text-secondary mb-4">
+                  <i class="fas fa-quote-left text-3xl opacity-50"></i>
+              </div>
+              <p class="text-text-light italic mb-6">"{{ testimonial.quote }}"</p>
+          </div>
+          <div class="font-bold text-primary border-t border-slate-100 pt-4">
+              - {{ testimonial.name }}
+          </div>
+      </div>
+      }
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="py-24 px-6 md:px-12 bg-bg-light">
+  <h2 class="section-title">Tell Us About Your Project</h2>
+  <div class="flex flex-col lg:flex-row gap-16 max-w-6xl mx-auto bg-white p-8 md:p-16 rounded-lg shadow-xl">
+      <div class="flex-1">
+          <h3 class="text-3xl text-primary mb-6 font-bold">Contact Information</h3>
+          <p class="mb-8 text-text-light text-lg">We are ready to assist you with your masonry and construction needs. Reach out to us today!</p>
+          
+          <div class="flex items-center mb-6 text-lg">
+              <i class="fas fa-phone text-secondary text-2xl w-10"></i>
+              <span><strong>Phone:</strong> <br>{{ content().phone }}</span>
+          </div>
+          <div class="flex items-center mb-6 text-lg">
+              <i class="fas fa-envelope text-secondary text-2xl w-10"></i>
+              <span><strong>Email:</strong> <br>{{ content().email }}</span>
+          </div>
+          <div class="flex items-center mb-6 text-lg">
+              <i class="fas fa-map-marker-alt text-secondary text-2xl w-10"></i>
+              <span><strong>Location:</strong> <br>Rochester, NY</span>
+          </div>
+      </div>
+      
+      <form class="flex-[1.5] flex flex-col gap-5" (submit)="$event.preventDefault()">
+          <input type="text" placeholder="Your Name" required class="w-full p-4 border border-slate-300 rounded bg-bg-light focus:outline-none focus:border-secondary focus:bg-white transition-colors">
+          <input type="email" placeholder="Your Email Address" required class="w-full p-4 border border-slate-300 rounded bg-bg-light focus:outline-none focus:border-secondary focus:bg-white transition-colors">
+          <input type="tel" placeholder="Your Phone Number" required class="w-full p-4 border border-slate-300 rounded bg-bg-light focus:outline-none focus:border-secondary focus:bg-white transition-colors">
+          <textarea rows="5" placeholder="Tell us about your project..." required class="w-full p-4 border border-slate-300 rounded bg-bg-light focus:outline-none focus:border-secondary focus:bg-white transition-colors"></textarea>
+          <button type="submit" class="px-7 py-4 bg-secondary text-white font-bold rounded hover:bg-accent transition-all hover:-translate-y-0.5 hover:shadow-lg text-lg">Send Message</button>
+      </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-primary text-slate-300 text-center py-12 px-6">
+  <div class="text-2xl font-extrabold text-white uppercase tracking-wide mb-4">Clark <span class="text-secondary">&</span> Wolcott</div>
+  <p class="mb-6">Masonry and Construction | Rochester, NY</p>
+  
+  <div class="flex justify-center gap-4 my-6">
+      <a href="https://www.facebook.com/ClarkandWolcott" target="_blank" title="Facebook" class="w-12 h-12 flex justify-center items-center rounded-full bg-white/10 text-white text-xl hover:bg-secondary hover:-translate-y-1 transition-all"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.linkedin.com/company/clarkandwolcott/" target="_blank" title="LinkedIn" class="w-12 h-12 flex justify-center items-center rounded-full bg-white/10 text-white text-xl hover:bg-secondary hover:-translate-y-1 transition-all"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" target="_blank" title="Twitter/X" class="w-12 h-12 flex justify-center items-center rounded-full bg-white/10 text-white text-xl hover:bg-secondary hover:-translate-y-1 transition-all"><i class="fab fa-twitter"></i></a>
+  </div>
+
+  <p>&copy; 2024 Clark and Wolcott Masonry and Construction. All rights reserved.</p>
+  
+  <a href="#" class="inline-block mt-6 text-secondary font-bold uppercase text-sm hover:text-white transition-colors">Florida Property Owners Click Here <i class="fas fa-arrow-right ml-1"></i></a>
+</footer>

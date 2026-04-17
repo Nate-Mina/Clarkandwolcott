@@ -1,0 +1,21 @@
+{
+  "heroTitle": "Expert Masonry & Construction in Rochester, NY",
+  "heroSubtitle": "Providing high-quality, aesthetically pleasing structures with an emphasis on craftsmanship, safety, and sustainability.",
+  "phone": "585-261-3180",
+  "email": "JClark@clarkandwolcott.net",
+  "aboutText": "At Clark & Wolcott, we specialize in providing a wide range of masonry construction services. We are dedicated to creating high-quality structures, no matter the size or scope of the project.",
+  "testimonials": [
+    {
+      "name": "Sarah Jenkins",
+      "quote": "Clark & Wolcott completely transformed our backyard with a beautiful new stone patio. Their attention to detail and craftsmanship is unmatched."
+    },
+    {
+      "name": "Michael Roberts",
+      "quote": "Professional, timely, and incredibly skilled. They repaired our historic brick chimney and it looks better than ever."
+    },
+    {
+      "name": "Emily Davis",
+      "quote": "We hired them for a commercial retaining wall project. They finished ahead of schedule and the quality of work exceeded our expectations."
+    }
+  ]
+}

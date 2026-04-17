@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Clark & Wolcott | Masonry and Construction</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- NETLIFY LOGIN WIDGET -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "GeneralContractor",
+      "name": "Clark & Wolcott",
+      "description": "Expert Masonry & Construction in Rochester, NY. Providing high-quality, aesthetically pleasing structures with an emphasis on craftsmanship, safety, and sustainability.",
+      "telephone": "585-261-3180",
+      "email": "JClark@clarkandwolcott.net",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Rochester",
+        "addressRegion": "NY",
+        "addressCountry": "US"
+      },
+      "areaServed": "Rochester, NY",
+      "knowsAbout": [
+        "Masonry",
+        "Construction",
+        "Brickwork",
+        "Stonework",
+        "Concrete"
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <app-root></app-root>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

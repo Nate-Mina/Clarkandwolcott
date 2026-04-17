@@ -1,0 +1,20 @@
+backend:
+  name: git-gateway
+  branch: main # or master
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "pages"
+    label: "Website Content"
+    files:
+      - label: "Edit Website Text"
+        name: "home"
+        file: "public/content.json"
+        fields:
+          - {label: "Main Big Title", name: "heroTitle", widget: "string"}
+          - {label: "Subtitle under Main Title", name: "heroSubtitle", widget: "text"}
+          - {label: "Phone Number", name: "phone", widget: "string"}
+          - {label: "Email Address", name: "email", widget: "string"}
+          - {label: "About Us Text", name: "aboutText", widget: "text"}

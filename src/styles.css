@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Open Sans', system-ui, sans-serif;
+  --font-display: 'Montserrat', sans-serif;
+  
+  --color-primary: #2c3e50;
+  --color-secondary: #b91c1c;
+  --color-accent: #dc2626;
+  --color-text-dark: #334155;
+  --color-text-light: #64748b;
+  --color-bg-light: #f8fafc;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+}
+
+.section-title {
+  @apply text-center text-4xl text-primary mb-16 relative;
+}
+
+.section-title::after {
+  content: '';
+  @apply w-16 h-1 bg-secondary absolute -bottom-4 left-1/2 -translate-x-1/2 rounded-sm;
+}
